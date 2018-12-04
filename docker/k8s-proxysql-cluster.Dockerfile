@@ -16,4 +16,7 @@ EXPOSE 6032 6033
 COPY ./files/init-k8s-cluster.sh /init-k8s-cluster.sh
 COPY ./files/proxysql-k8s-cluster.cnf /proxysql-k8s-cluster.cnf
 COPY ./files/entrypoint.sh /entrypoint.sh
+
+RUN chmod +x /entrypoint.sh /init-k8s-cluster.sh
+
 ENTRYPOINT [ "/entrypoint.sh" ]
